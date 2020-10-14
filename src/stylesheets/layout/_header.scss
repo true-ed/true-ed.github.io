@@ -1,0 +1,93 @@
+.header{
+  width: 100%;
+  height: 700px;
+  background-image: url("@/assets/header-bg.jpg");
+  background-size: cover;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  
+  .adaptive{
+    padding-top: 30px;
+    height: 100%;
+  }
+
+  &__logo{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 56px;
+    text-transform: uppercase;
+  }
+
+  &__animated-svg{
+    width: 240px;
+    height: auto;
+    position: absolute;
+    bottom: 160px;
+    right: 80px;
+  }
+
+  &__text{
+    width: 600px;
+    position: absolute;
+    bottom: 160px;
+    left: 20px;
+
+    &-title{
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 44px;
+      line-height: 1.6;
+      letter-spacing: 1.5px;
+      color: white;
+      padding-left: 20px;
+    }
+
+    &-paragraph{
+      width: 100%;
+      font-size: 16px;
+      color: white;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+  }
+
+  &__bg-word{
+    font-size: 250px;
+    font-family: 'Ubuntu Mono', monospace;
+    letter-spacing: 10px;
+    position: absolute;
+    bottom: 200px;
+    font-weight: bold;
+    color: rgba(white, 0.15);
+  }
+
+  &__mouse{
+    position: absolute;
+    bottom: 60px;
+    left: calc(50% - 12px);
+  }
+
+  &__socials{
+    width: 36px;
+    height: auto;
+    padding: 10px 0;
+    background-color: rgba(white, 0.4);
+    position: absolute;
+    top: 0;
+    right: 20px;
+
+    &-link{
+      width: 100%;
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      transition: $transition;
+
+      &:hover{
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+}
