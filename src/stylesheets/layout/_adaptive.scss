@@ -3,4 +3,25 @@
   margin-left: calc(50% - 720px);
   padding: 0 20px;
   position: relative;
+  transition: $transition;
+
+  @media screen and (max-width: 1440px) {
+    width: 1200px;
+    margin-left: calc(50% - 600px);
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 1024px;
+    margin-left: calc(50% - 512px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 768px;
+    margin-left: calc(50% - 384px);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
