@@ -69,6 +69,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Edward Prykhozhay",
       template: "./public/index.html",
+      filename: "../index.html"
     }),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
