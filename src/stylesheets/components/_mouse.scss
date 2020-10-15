@@ -1,0 +1,33 @@
+.mouse {
+  width: 24px;
+  height: 44px;
+  box-shadow: 0 0 0 2px white;
+  border-radius: 24px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: calc(50% - 3px);
+    top: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px white;
+    animation: mouse 0.9s cubic-bezier(0.1, 0.1, 0, 0) infinite reverse;
+  }
+}
+
+@keyframes mouse {
+  0% {
+    top: 7px;
+  }
+
+  20% {
+    top: 20px;
+  }
+
+  100% {
+    top: 7px;
+  }
+}

@@ -1,0 +1,170 @@
+.header{
+  width: 100%;
+  height: 700px;
+  background-image: url("@/assets/header-text-bg.jpg");
+  background-size: cover;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-bottom: 500px;
+
+  @media screen and (max-width: 1024px) {
+    height: 600px;
+  }
+
+  @media screen and (max-width: 768px){
+    background-image: url("@/assets/header-bg.jpg");
+  }
+  
+  .adaptive{
+    padding-top: 30px;
+    height: 100%;
+  }
+
+  &__logo{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 56px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 768px) {
+      line-height: 1.6;
+    }
+  }
+
+  &__animated-svg{
+    width: 240px;
+    height: auto;
+    position: absolute;
+    bottom: 160px;
+    right: 80px;
+
+    @media screen and (max-width: 1024px) {
+      width: 180px;
+      right: 20px;
+      top: 300px;
+    }
+
+    @media screen and (max-width: 768px) {
+      left: 20px;
+      top: 130px;
+    }
+  }
+
+  &__text{
+    width: 600px;
+    position: absolute;
+    bottom: 160px;
+    left: 20px;
+
+    @media screen and (max-width: 1024px) {
+      top: 300px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width:calc(100% - 20px);
+      left: 20px;
+      top: 340px;
+    }
+
+    &-title{
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 44px;
+      line-height: 1.6;
+      letter-spacing: 1.5px;
+      color: white;
+      padding-left: 20px;
+
+      @media screen and (max-width: 768px) {
+        line-height: 1.1;
+        padding: 0 0 20px 20px;
+      }
+    }
+
+    &-paragraph{
+      width: 100%;
+      font-size: 16px;
+      color: white;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+  }
+
+  &__bg-word{
+    font-size: 250px;
+    font-family: 'Ubuntu Mono', monospace;
+    letter-spacing: 10px;
+    position: absolute;
+    bottom: 200px;
+    font-weight: bold;
+    color: rgba(white, 0.15);
+    transition: $transition;
+    transition-property: font-size;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 240px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 160px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 100px;
+      top: 200px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      top: 280px;
+      left: 20px;
+      color: rgba(white, 0.3);
+    }
+  }
+
+  &__mouse{
+    position: absolute;
+    bottom: 60px;
+    left: calc(50% - 12px);
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__socials{
+    width: 36px;
+    height: auto;
+    padding: 10px 0;
+    background-color: rgba(white, 0.4);
+    position: absolute;
+    top: 0;
+    right: 500px;
+
+    @media screen and (max-width: 1024px) {
+      right: 190px;
+    }
+
+    @media screen and (max-width: 768px) {
+      position: fixed;
+      top: 90px;
+      right: 0;
+      transform: rotateY(0) !important;
+    }
+
+    &-link{
+      width: 100%;
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      transition: $transition;
+
+      &:hover{
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+}
