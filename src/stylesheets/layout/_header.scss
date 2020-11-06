@@ -6,7 +6,7 @@
   background-position: center 0;
   background-repeat: no-repeat;
   overflow: hidden;
-  margin-bottom: 500px;
+  margin-bottom: 60px;
 
   @media screen and (max-width: 1024px) {
     height: 600px;
@@ -138,7 +138,7 @@
     height: auto;
     padding: 10px 0;
     background-color: rgba(white, 0.4);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 500px;
 

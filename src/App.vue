@@ -26,9 +26,7 @@
         div.mouse.header__mouse(
           v-rellax="{speed: 0.5}"
         )
-        div.header__socials(
-          v-rellax="{speed: -5}"
-        )
+        div.header__socials
           a.header__socials-link(
             href='#'
           )
@@ -41,6 +39,15 @@
             href='#'
           )
             i.fab.fa-linkedin
+    .adaptive
+      Card(
+        title="Bilinimo"
+        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+      )
+    .footer(
+      style="margin-top: 50px;"
+    )
 </template>
 
 <script lang="ts">
@@ -48,10 +55,12 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 import AnimatedSVG from '@/components/AnimatedSVG.vue'
+import Card from '@/components/Card.vue'
 
 @Component({
   components: {
     AnimatedSVG,
+    Card
   },
 })
 export default class App extends Vue {
