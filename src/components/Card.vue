@@ -1,6 +1,38 @@
 <template lang="pug">
-  .card
+  .card(
+    :class=`{
+      "card_active": slide != 0
+    }`
+  )
     .card__title {{title}}
+    .card__gallery(
+      v-if="images.length > 0"
+    )
+      .card__gallery-image-wrapper(
+        v-for="(src, index) in images"
+        tabindex="1"
+        @click=`
+          slide == 0 ? 
+            (() =>{
+              slide = index + 1
+              galleryBackground(true)
+            })()
+            : (() =>{
+              if(slide == index + 1){
+                slide = 0
+                galleryBackground(false)
+              }else{
+                slide = index + 1
+              }
+            })()
+        `
+        :class=`{
+          "card__gallery-image-wrapper_active": slide == (index + 1)
+        }`
+      )
+        img.card__gallery-image(
+          :src="src"
+        )
     .card__text {{text}}
     .card__tags
       .card__tag(
@@ -23,10 +55,20 @@ import Component from "vue-class-component";
   props: {
     title: String,
     text: String,
-    tags: Array
+    tags: Array,
+    images: {
+      default: () => [],
+      type: Array
+    },
+    galleryBackground: {
+      default: () =>{},
+      type: Function
+    }
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  slide = 0;
+}
 </script>
 
 <style lang="scss" scoped></style>

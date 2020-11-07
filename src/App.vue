@@ -40,13 +40,33 @@
           )
             i.fab.fa-linkedin
     .adaptive
-      Card(
-        title="Bilinimo"
-        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+      .card__gallery-background(
+        :class="{'card__gallery-background_active': card__galleryBackground}"
       )
+      .card__wrapper
+        Card(
+          :class=`{
+            'card_disabled': card__galleryBackground
+          }`
+          title="Minimino"
+          :images="[require('@/assets/portfolio/minimino.png'), require('@/assets/portfolio/minimino-1.png'), require('@/assets/portfolio/minimino-2.png')]"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+        )
+      .card__wrapper
+        Card(
+          :class=`{
+            'card_disabled': card__galleryBackground
+          }`
+          title="Minimino"
+          :images="[require('@/assets/portfolio/minimino.png'), require('@/assets/portfolio/minimino-1.png'), require('@/assets/portfolio/minimino-2.png')]"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+        )
     .footer(
-      style="margin-top: 50px;"
+      style="margin-top: 500px;"
     )
 </template>
 
@@ -64,7 +84,7 @@ import Card from '@/components/Card.vue'
   },
 })
 export default class App extends Vue {
-  
+  card__galleryBackground = false;
 }
 </script>
 
