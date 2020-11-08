@@ -1,50 +1,54 @@
 <template lang="pug">
-  .card(
+  .card__wrapper(
     :class=`{
-      "card_active": slide != 0
+      'card__wrapper_active': active_image != 0
     }`
   )
-    .card__title {{title}}
-    .card__gallery(
-      v-if="images.length > 0"
+    .card(
+      :class=`{
+        "card_active": active_image != 0
+      }`
     )
-      .card__gallery-image-wrapper(
-        v-for="(src, index) in images"
-        tabindex="1"
-        @click=`
-          slide == 0 ? 
-            (() =>{
-              slide = index + 1
-              galleryBackground(true)
-            })()
-            : (() =>{
-              if(slide == index + 1){
-                slide = 0
-                galleryBackground(false)
-              }else{
-                slide = index + 1
-              }
-            })()
-        `
-        :class=`{
-          "card__gallery-image-wrapper_active": slide == (index + 1)
-        }`
+      .card__title {{title}}
+      .card__gallery(
+        v-if="images.length > 0"
       )
-        img.card__gallery-image(
-          :src="src"
+        .card__gallery-image-wrapper(
+          v-for="(src, index) in images"
+          tabindex="1"
+          @click=`
+            active_image == 0 ? 
+              (() =>{
+                active_image = index + 1
+                galleryBackground(true)
+              })()
+              : (() =>{
+                if(active_image == index + 1){
+                  active_image = 0
+                  galleryBackground(false)
+                }else{
+                  active_image = index + 1
+                }
+              })()
+          `
+          :class=`{
+            "card__gallery-image-wrapper_active": active_image == (index + 1)
+          }`
         )
-    .card__text {{text}}
-    .card__tags
-      .card__tag(
-        v-for="tag in tags"
-      ) {{tag}}
-    button.card__button(
-      type="button"
-    ) Open source &#8594;
-    button.card__button(
-      type="button"
-    ) Gallery &#8594;
-  </div>
+          img.card__gallery-image(
+            :src="src"
+          )
+      .card__text {{text}}
+      .card__tags
+        .card__tag(
+          v-for="tag in tags"
+        ) {{tag}}
+      button.card__button(
+        type="button"
+      ) Open source &#8594;
+      button.card__button(
+        type="button"
+      ) Gallery &#8594;
 </template>
 
 <script lang="ts">
@@ -67,7 +71,7 @@ import Component from "vue-class-component";
   },
 })
 export default class App extends Vue {
-  slide = 0;
+  active_image = 0;
 }
 </script>
 
