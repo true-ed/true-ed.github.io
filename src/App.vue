@@ -26,9 +26,7 @@
         div.mouse.header__mouse(
           v-rellax="{speed: 0.5}"
         )
-        div.header__socials(
-          v-rellax="{speed: -5}"
-        )
+        div.header__socials
           a.header__socials-link(
             href='#'
           )
@@ -41,6 +39,35 @@
             href='#'
           )
             i.fab.fa-linkedin
+    .adaptive
+      .card__grid
+        .card__gallery-background(
+          :class="{'card__gallery-background_active': card__galleryBackground}"
+        )
+        Card(
+          :class=`{
+            'card__wrapper_disabled': card__galleryBackground
+          }`
+          title="Minimino"
+          :images="[require('@/assets/portfolio/minimino/minimino.png'), require('@/assets/portfolio/minimino/minimino-1.png'), require('@/assets/portfolio/minimino/minimino-2.png')]"
+          text="Minimalistic, light, fresh and responsive mobile app website"
+          :tags=['ES6', 'Node JS', 'Webpack', 'Vue', 'Scss']
+          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+          demo="#"
+        )
+        Card(
+          :class=`{
+            'card__wrapper_disabled': card__galleryBackground
+          }`
+          title="Neural Network"
+          text="Scalable code of Neural Network (Perceptron).  The neural network layer class was written in <b>C++</b> and <b>JavaScript</b> (node js). Layers of Neurons can be combined in any way that allows you to experimentalize."
+          :tags=['C++', 'JavaScript']
+          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+          code="https://github.com/true-ed/neural-network"
+        )
+    .footer(
+      style="margin-top: 500px;"
+    )
 </template>
 
 <script lang="ts">
@@ -48,14 +75,16 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 import AnimatedSVG from '@/components/AnimatedSVG.vue'
+import Card from '@/components/Card.vue'
 
 @Component({
   components: {
     AnimatedSVG,
+    Card
   },
 })
 export default class App extends Vue {
-  
+  card__galleryBackground = false;
 }
 </script>
 
