@@ -38,17 +38,22 @@
           img.card__gallery-image(
             :src="src"
           )
-      .card__text {{text}}
+      .card__text(
+        v-html="text"
+      )
       .card__tags
         .card__tag(
           v-for="tag in tags"
         ) {{tag}}
-      button.card__button(
-        type="button"
-      ) Open source &#8594;
-      button.card__button(
-        type="button"
-      ) Gallery &#8594;
+      a.card__button(
+        v-if="demo != ''"
+        :href="demo"
+      ) Demo &#8594;
+      a.card__button(
+        v-if="code != ''"
+        :href="code"
+        target="_blank"
+      ) Code &#8594;
 </template>
 
 <script lang="ts">
@@ -67,6 +72,14 @@ import Component from "vue-class-component";
     galleryBackground: {
       default: () =>{},
       type: Function
+    },
+    demo: {
+      default: "",
+      type: String
+    },
+    code: {
+      default: "",
+      type: String
     }
   },
 })

@@ -7,7 +7,7 @@
   position: relative;
   transition: $transition * 2;
   transition-property: transform;
-  transform: rotateZ(-5deg) rotateY(20deg);
+  transform: rotateZ(-2deg) rotateY(10deg);
   margin: 30px;
 
   @media screen and (max-width: 1200px) {
@@ -154,6 +154,7 @@
 
   &__tags {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   &__tag {
@@ -175,6 +176,9 @@
     color: white;
     margin: 10px 10px 0 0;
     transition: $transition;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
 
     cursor: pointer;
 

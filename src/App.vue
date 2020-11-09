@@ -49,30 +49,21 @@
             'card__wrapper_disabled': card__galleryBackground
           }`
           title="Minimino"
-          :images="[require('@/assets/portfolio/minimino.png'), require('@/assets/portfolio/minimino-1.png'), require('@/assets/portfolio/minimino-2.png')]"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+          :images="[require('@/assets/portfolio/minimino/minimino.png'), require('@/assets/portfolio/minimino/minimino-1.png'), require('@/assets/portfolio/minimino/minimino-2.png')]"
+          text="Minimalistic, light, fresh and responsive mobile app website"
+          :tags=['ES6', 'Node JS', 'Webpack', 'Vue', 'Scss']
           :galleryBackground="(activate) => { card__galleryBackground = activate }"
+          demo="#"
         )
         Card(
           :class=`{
             'card__wrapper_disabled': card__galleryBackground
           }`
-          title="Minimino"
-          :images="[require('@/assets/portfolio/minimino.png'), require('@/assets/portfolio/minimino-1.png'), require('@/assets/portfolio/minimino-2.png')]"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
+          title="Neural Network"
+          text="Scalable code of Neural Network (Perceptron).  The neural network layer class was written in <b>C++</b> and <b>JavaScript</b> (node js). Layers of Neurons can be combined in any way that allows you to experimentalize."
+          :tags=['C++', 'JavaScript']
           :galleryBackground="(activate) => { card__galleryBackground = activate }"
-        )
-        Card(
-          :class=`{
-            'card__wrapper_disabled': card__galleryBackground
-          }`
-          title="Minimino"
-          :images="[require('@/assets/portfolio/minimino.png'), require('@/assets/portfolio/minimino-1.png'), require('@/assets/portfolio/minimino-2.png')]"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          :tags=['node js', 'webpack', 'vue', 'vuex', 'vue routing']
-          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+          code="https://github.com/true-ed/neural-network"
         )
     .footer(
       style="margin-top: 500px;"
