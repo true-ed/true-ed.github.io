@@ -53,7 +53,7 @@
           text="Minimalistic, light, fresh and responsive mobile app website"
           :tags=['ES6', 'Node JS', 'Webpack', 'Vue', 'Scss']
           :galleryBackground="(activate) => { card__galleryBackground = activate }"
-          demo="#"
+          demo="./public/minimino/index.html"
         )
         Card(
           :class=`{
@@ -64,6 +64,17 @@
           :tags=['C++', 'JavaScript']
           :galleryBackground="(activate) => { card__galleryBackground = activate }"
           code="https://github.com/true-ed/neural-network"
+        )
+        Card(
+          :class=`{
+            'card__wrapper_disabled': card__galleryBackground
+          }`
+          title="Restaurant Template"
+          :images="[require('@/assets/portfolio/restaurantTemplate/restaurantTemplate.png'), require('@/assets/portfolio/restaurantTemplate/restaurantTemplate-1.png'), require('@/assets/portfolio/restaurantTemplate/restaurantTemplate-2.png')]"
+          text="Restaurant or cafe design concept."
+          :tags=['javascript', 'scss', 'vue']
+          :galleryBackground="(activate) => { card__galleryBackground = activate }"
+          demo="./public/restaurantTemplate/index.html"
         )
     .footer(
       style="margin-top: 500px;"

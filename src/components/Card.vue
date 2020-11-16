@@ -48,6 +48,7 @@
       a.card__button(
         v-if="demo != ''"
         :href="demo"
+        target="_blank"
       ) Demo &#8594;
       a.card__button(
         v-if="code != ''"
